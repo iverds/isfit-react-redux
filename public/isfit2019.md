@@ -1,8 +1,8 @@
 build-lists: true
 
-## ISFiT 2017
+## ISFiT 2019
 
-####Iver Skjervum-Karlsen
+####Iver Skjervum-Karlsen & Dag-Inge Aas
 
 ---
 
@@ -14,36 +14,53 @@ build-lists: true
 
 ![](./sommer.jpg)
 
-#Blank
+#Blank Sommerstipend
 
-- Sommerstipend 2017
-
-- http://blankos.lol/sommer
+- 30.000,- skattefritt
+- Gjør noe du brenner for!
+- Søkndasfrist 14.10 (?)
+- Følg med!
 
 ---
-# React/Redux
+
+![](./sommer.jpg)
+
+#Blank fast jobb
+
+## Søknadsfrist 07.10
+
+---
+# Kvelden 
 
 - Intro til React
-- Mat?
-- Intro til Redux
+- Mat
+- Arbeidskveld
+- Samfundet?
 
 ---
 
-## ES2015
+# Kurset 
+
+- Rendering
+- State
+- Props
+- Struktur
+
+---
+
+## Litt om klasser
 
 ```javascript
 class Person {
-    name: string
 
-    constructor(name: string) {
+    constructor(name) {
         this.name = name;
     }
 
     getName() {
-        console.log(this.name);
+        return this.name;
     }
 
-    // this bundet til klassen
     getName2 = () => this.name
 }
 
@@ -88,6 +105,7 @@ ReactDOM.render(
 
 ---
 #State
+
 ```javascript
 class Open extends React.Component {   
     constructor(props) {
@@ -105,22 +123,30 @@ class Open extends React.Component {
         return(
             <div>
                 <button onClick = { this.toggleOpen }>Toggle</button>
-                { this.state.isOpen ? "Open" : "Lukket" }
+                { this.state.isOpen ? "Åpen" : "Lukket" }
             </div>
         );
     }
 }
 
 ```
+
 ---
-## Oppgave 1
+
+##Kom i gang
 
 - ```git clone https://github.com/iverds/isfit-react-redux.git```
 - ```git checkout part1```
-- ```npm run watch```
+- ```npm install ```
+- ```npm start```
 - ```http://localhost:3000```
+
+---
+
+
+## Oppgave 1
+
 - Lag en komponent med en knapp som øker en teller med 1 hver gang den trykkes på
-- Hint: Begynn i main.jsx
 
 ---
 
@@ -138,9 +164,6 @@ class List extends React.Component {
 }
 
 class Item extends React.Component {
-    static propTypes = {
-        element: React.PropTypes.string.isRequired,
-    }
     render() {
         return(<li>{ this.props.element }</li>);
     }
@@ -160,17 +183,14 @@ function Item(props) {
 
 const Item = ({element}) => <li>{element}</li>
 
-Item.propTypes = {
-    element: React.PropTypes.string.isRequired,
-}
-
 ```
 
 ---
 
 # Oppgave 2
 
-- For hver gang dere trykker på knappen i oppgave 1 skal det nå opprettes et nytt element i en liste
+- For hver gang dere trykker på knappen i oppgave 1 skal det nå opprettes et nytt element i en liste (f.eks et tilfeldig navn eller en teller)
+- Du skal vise listen over opprettede elementer
 - Hint 1: Du må ha en array i state
 - Hint 2: Det kan være lurt å lage flere komponenter
 
@@ -208,13 +228,10 @@ class Form extends React.Component {
 
 #Struktur på kode
 
-- Eksport (components/item.jsx):
+- Eksport (components/item.js):
 
 ```javascript
 class Item extends React.Component {
-    static propTypes = {
-        element: React.PropTypes.string.isRequired,
-    }
     render() {
         return(<li>{ this.props.element }</li>);
     }
@@ -223,7 +240,7 @@ class Item extends React.Component {
 export default Item;
 ```
 
-- Import (main.jsx):
+- Import (main.js):
 
 ```javascript
 import Item from "components/item"
@@ -242,7 +259,7 @@ skal du nå opprette nye elementer i listen ved å skrive inn navnet på element
 ---
 
 #Pause
-- For "fasit" del 1: ```git checkout part2```
+- For "fasit": ```git checkout part2```
 
 ---
 
